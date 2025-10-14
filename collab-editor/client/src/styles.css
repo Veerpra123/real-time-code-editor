@@ -1,0 +1,158 @@
+/* src/styles.css - Vibrant Colorful Theme (gradients + unique buttons) */
+
+:root {
+  --bg: #fdf2f8;
+  --panel: rgba(250, 232, 255, 0.88);
+  --muted: #6d6875;
+  --text: #2b2d42;
+
+  --grad-1: linear-gradient(120deg, #ff6b6b, #feca57, #5f27cd, #48dbfb);
+  --grad-2: linear-gradient(120deg, #7b2ff7, #f78fb3, #ffd166, #06d6a0);
+  --grad-3: linear-gradient(120deg, #ff9ff3, #54a0ff, #1dd1a1);
+
+  --btn-red: linear-gradient(135deg, #ff6b6b, #ff9a9e);
+  --btn-orange: linear-gradient(135deg, #fca311, #ffd166);
+  --btn-green: linear-gradient(135deg, #06d6a0, #74c69d);
+  --btn-blue: linear-gradient(135deg, #48dbfb, #54a0ff);
+  --btn-purple: linear-gradient(135deg, #7b2ff7, #b388eb);
+  --btn-pink: linear-gradient(135deg, #f78fb3, #ff9ff3);
+
+  --btn-shadow: 0 8px 26px rgba(0,0,0,0.15);
+}
+
+:root.dark {
+  --bg: #1d1b27;
+  --panel: rgba(40, 32, 60, 0.88);
+  --muted: #a8a6b6;
+  --text: #fdfcdc;
+
+  --grad-1: linear-gradient(120deg, #ff9ff3, #54a0ff, #1dd1a1, #ff6b6b);
+  --grad-2: linear-gradient(120deg, #7b2ff7, #e4ccff, #89f7fe, #60a5fa);
+  --grad-3: linear-gradient(120deg, #9b5cff, #70e1f5, #ffd166);
+
+  --btn-red: linear-gradient(135deg, #ef476f, #ff6b6b);
+  --btn-orange: linear-gradient(135deg, #fca311, #ffb347);
+  --btn-green: linear-gradient(135deg, #06d6a0, #4cc9f0);
+  --btn-blue: linear-gradient(135deg, #4361ee, #48dbfb);
+  --btn-purple: linear-gradient(135deg, #7b2ff7, #9d4edd);
+  --btn-pink: linear-gradient(135deg, #f78fb3, #ff99ac);
+}
+
+* { box-sizing: border-box; }
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: var(--grad-1);
+  background-size: 300% 300%;
+  animation: gradientShift 10s linear infinite;
+  color: #fff;
+  border-radius: 0 0 18px 18px;
+  box-shadow: var(--btn-shadow);
+}
+
+/* Footer */
+.footer {
+  padding: 14px 18px;
+  background: var(--grad-3);
+  background-size: 250% 250%;
+  animation: gradientShift 12s linear infinite;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Buttons */
+button.btn {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: transform 200ms ease, filter 200ms ease;
+  box-shadow: var(--btn-shadow);
+}
+button.btn:hover { transform: translateY(-3px) scale(1.03); filter: brightness(1.05); }
+button.btn:active { transform: translateY(-1px) scale(0.97); }
+
+/* Unique button colors */
+button.btn.red { background: var(--btn-red) !important; color: #fff !important; }
+button.btn.orange { background: var(--btn-orange) !important; color: #222 !important; }
+button.btn.green { background: var(--btn-green) !important; color: #fff !important; }
+button.btn.blue { background: var(--btn-blue) !important; color: #fff !important; }
+button.btn.purple { background: var(--btn-purple) !important; color: #fff !important; }
+button.btn.pink { background: var(--btn-pink) !important; color: #fff !important; }
+
+/* Cards and panels */
+.card, .users-panel, .chat-panel {
+  background: var(--panel);
+  border-radius: 14px;
+  box-shadow: var(--btn-shadow);
+  padding: 12px;
+}
+
+/* Editor */
+.CodeMirror {
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+/* Chat */
+.chat-line.me {
+  background: linear-gradient(90deg, rgba(255,107,107,0.16), rgba(255,199,199,0.06));
+  border-radius: 8px;
+  padding: 6px;
+}
+.chat-line.other {
+  background: linear-gradient(90deg, rgba(79,172,254,0.16), rgba(129,213,250,0.06));
+  border-radius: 8px;
+  padding: 6px;
+}
+
+/* User avatars */
+.user-item img {
+  border-radius: 12px;
+  background: var(--grad-2);
+  background-size: 200% 200%;
+  animation: gradientShift 9s linear infinite;
+}
+
+/* Inputs */
+input, textarea, select {
+  border-radius: 10px;
+  padding: 8px;
+  background: rgba(255,255,255,0.25);
+  border: none;
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width:900px) {
+  .main { flex-direction: column; }
+  .sidebar { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
