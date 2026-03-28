@@ -65,7 +65,7 @@ This project enables developers to collaborate on code in real time, similar to 
 - Users join using shared links  
 - Communication restricted within room  
 
----
+```
 collab-editor/
 │
 ├── backend/
@@ -82,7 +82,7 @@ collab-editor/
 │ └── package.json
 │
 └── README.md
----
+```
 
 ## 🚀 Getting Started
 
