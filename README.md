@@ -69,17 +69,17 @@ This project enables developers to collaborate on code in real time, similar to 
 collab-editor/
 │
 ├── backend/
-│   ├── server.js
-│   ├── package.json
-│   └── test.js
+│ ├── server.js
+│ ├── package.json
+│ └── test.js
 │
 ├── client/
-│   ├── public/
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── index.js
-│   │   └── styles.css
-│   └── package.json
+│ ├── public/
+│ ├── src/
+│ │ ├── App.jsx
+│ │ ├── index.js
+│ │ └── styles.css
+│ └── package.json
 │
 └── README.md
 ---
