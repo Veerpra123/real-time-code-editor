@@ -1,89 +1,97 @@
-# 🚀 Real-Time Code Editor
+# 🚀 Real-Time Code Editor  
 
-A powerful real-time collaborative code editor where multiple users can write, edit, and execute code together instantly.
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Tech](https://img.shields.io/badge/Stack-MERN%20%7C%20Socket.IO%20%7C%20Judge0-blue)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
+A real-time collaborative code editor that allows multiple users to write, edit, and execute code simultaneously in a shared environment.
 
 ---
 
+## ✨ Overview
+
+This project enables developers to collaborate on code in real time, similar to Google Docs but designed specifically for coding. It supports multiple programming languages, live updates, and instant code execution.
+
 ---
 
-## 📌 Features
+## 🎯 Key Features
 
-- 👨‍💻 Real-time collaborative coding
-- 💬 Built-in chat system
-- ⚡ Multi-language code execution (40+ languages)
-- 🎨 Light/Dark theme toggle
-- 🔗 Share room via unique link
-- 💾 Session persistence
-- 🔐 Secure room-based collaboration
+- Real-time collaborative editing using WebSockets  
+- Multi-user room-based collaboration  
+- Built-in chat system for communication  
+- Code execution support (40+ languages)  
+- Light/Dark theme support  
+- Unique room sharing via link  
+- Fast and responsive UI  
 
 ---
 
 ## 🛠️ Tech Stack
 
-### 🔹 Frontend
-- React.js
-- CodeMirror 6
-- Socket.IO Client
-- CSS
+### Frontend
+- React.js  
+- CodeMirror 6  
+- Socket.IO Client  
 
-### 🔹 Backend
-- Node.js
-- Express.js
-- Socket.IO
-- Judge0 API
+### Backend
+- Node.js  
+- Express.js  
+- Socket.IO  
 
-### 🔹 Other Tools
-- WebSockets
-- REST APIs
-- Git & GitHub
+### Code Execution
+- Judge0 API  
+
+### Tools & Technologies
+- WebSockets  
+- REST APIs  
+- Git & GitHub  
 
 ---
 
-## 📂 Project Structure
+## ⚙️ System Workflow
+
+### Real-Time Sync
+- User writes code → event emitted via Socket.IO  
+- Server receives and broadcasts changes  
+- All connected users receive updates instantly  
+
+### Code Execution Flow
+- Code sent from frontend → backend  
+- Backend sends request to Judge0 API  
+- Output returned and displayed to user  
+
+### Room-Based Architecture
+- Each session uses a unique Room ID  
+- Users join using shared links  
+- Communication restricted within room  
+
+---
 
 collab-editor/
 │
 ├── backend/
-│   ├── server.js
-│   ├── package.json
-│   └── test.js
+│ ├── server.js
+│ ├── package.json
+│ └── test.js
 │
 ├── client/
-│   ├── public/
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── index.js
-│   │   └── styles.css
-│   └── package.json
+│ ├── public/
+│ ├── src/
+│ │ ├── App.jsx
+│ │ ├── index.js
+│ │ └── styles.css
+│ └── package.json
 │
 └── README.md
 
----
-
-## ⚙️ How It Works
-
-### 🔁 Real-Time Collaboration
-- Uses Socket.IO for real-time communication
-- When a user types:
-  - Event is sent to server
-  - Server broadcasts to all users in the same room
-  - All users see updates instantly
-
-### 🧠 Code Execution
-- Code is sent to Judge0 API
-- Backend processes the request
-- Output is returned and displayed on UI
-
-### 🏠 Room System
-- Each session has a unique Room ID
-- Users join using a shared link
-- Only users in the same room can collaborate
 
 ---
 
-## 🔌 Installation & Setup
+## 🚀 Getting Started
 
-### 1️⃣ Clone Repository
+### 1. Clone Repository
 ```bash
 git clone https://github.com/your-username/real-time-code-editor.git
 cd real-time-code-editor
+
+## 📂 Project Structure
